@@ -12,7 +12,12 @@
           <li>{{userFavRests.length}} 收藏的餐廳</li>
           <li>{{userFollowing.length}} followings</li>
           <li>{{userFollower.length}} followes</li>
-          <button v-if="user.id === currentUser.id" type="button" class="btn btn-primary mt-3">Edit</button>
+          <router-link
+            :to="{name:'user-edit',params:{id:user.id}}"
+            v-if="user.id === currentUser.id"
+            type="button"
+            class="btn btn-primary mt-3"
+          >Edit</router-link>
           <button
             v-else-if="userIsFollow === false"
             type="button"
